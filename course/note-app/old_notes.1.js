@@ -10,7 +10,7 @@ function getNotes(){
 // Функция для добавления указанных в command line данных в файл
 function addNote(title, author){
   const notes = loadNotes()                                 // Получаем данные из файла, если не существует, то пустой массив
-  const duplicateNotes = notes.filter(function(note){
+  const duplicateNotes = notes.filter(function(note){       // Минус метода в том, что обходим целый массив
     return note.title === title
   })
   if (duplicateNotes.length === 0) {

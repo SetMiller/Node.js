@@ -45,11 +45,11 @@ yargs.version('1.1.0')
 yargs.command({
    command: 'add',
    describe: 'Add a new note',
-   builder: { // сюда добавляем новые свойства
+   builder: {                                   // Обязательные для указания свойства
       title: {
          describe: 'Note title',
-         demandOption: true, // Флаг обязательного аргумента
-         type: 'string', // тип принимаимых аргументов
+         demandOption: true,                    // Флаг обязательного аргумента
+         type: 'string',                        // тип принимаимых аргументов
       },
       author: {
          describe: 'firstName secondName',
@@ -69,11 +69,11 @@ yargs.command({
 yargs.command({
    command: 'remove',
    describe: 'Remove a note',
-   builder: {                             // сюда добавляем новые свойства
+   builder: {                                   // Обязательные для указания свойства
       title: {
          describe: 'Note title',
-         demandOption: true,              // Флаг обязательного аргумента
-         type: 'string',                  // тип принимаимых аргументов
+         demandOption: true,                    // Флаг обязательного аргумента
+         type: 'string',                        // тип принимаимых аргументов
       }
    },
    handler(argv) {
@@ -85,8 +85,8 @@ yargs.command({
 yargs.command({
    command: 'list',
    describe: 'Argv was listed',
-   handler() {
-      console.log(chalk.magenta([...process.argv]))
+   handler(argv) {
+      notes.listNotes(argv.title)
    }
 })
 
