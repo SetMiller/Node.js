@@ -1,14 +1,20 @@
+// node app.js add --title="hello" --author="world"
+
 // const validator = require('./node_modules/validator')
 const chalk = require('./node_modules/chalk')
 const yargs = require('./node_modules/yargs') // возвращает объект 🔥🔥🔥🔥 
-const notes = require('../step_2_modules/notes.js')
+const notes = require('./notes.js')
 
 yargs.version('1.1.0')
+
+process.argv.forEach((element, index) => {
+   index > 1 ? console.log(element) : ''
+});
 
 // Create add command
 yargs.command({
    command: 'add',
-   describe: 'Add a new note',
+   describe: 'Add a note',                      // Если поставить false, то метод станет невидимым в info
    builder: {                                   // Обязательные для указания свойства
       title: {
          describe: 'Note title',

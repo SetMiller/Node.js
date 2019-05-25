@@ -8,21 +8,19 @@ const addNote = (title, author) => {
 	const notes = loadNotes()
 	// const duplicateNotes = notes.filter((note) => note.title === title)		// Минус метода в том, что обходим целый массив
 	const duplicateNote = notes.find((note) => note.title === title)
-
-	debugger
-
 	if (!duplicateNote) {
 		notes.push({
 				title: title,
 				author: author,
-			}),
-			saveNotes(notes),
+			})
+			saveNotes(notes)
 			console.log(chalk.black.bgGreen('Note added!'))
 	} else {
 		console.log('ERROR')
 	}
 }
 
+// Функция для удаления указанных в command line данных
 const removeNote = (title) => {
 	const notes = loadNotes()
 	const resultNotes = notes.filter((note) => note.title !== title)
@@ -34,11 +32,13 @@ const removeNote = (title) => {
 	}
 }
 
+// Функция для вывода перечня
 const listNotes = () => {
 	const notes = loadNotes()
 	notes.forEach(note => console.log(chalk.black.bgYellow(note.title)));
 }
 
+// Функция по титулу находит интересующий объект и выводит информацию
 const readNotes = (title) => {
 	const notes = loadNotes()
 	const matchesNote = notes.find((note) => note.title === title)
