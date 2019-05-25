@@ -5,3 +5,4 @@ let notes2 = ' My name is Rafael Solomko 😄 👍👍'
 fileSystem.writeFileSync('notes.txt', notes) // rewrite file if it does exist or create file
 
 fileSystem.appendFileSync('notes.txt', notes2)
+console.log('work is done!!!')
