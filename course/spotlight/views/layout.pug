@@ -1,0 +1,20 @@
+doctype
+head
+   title= page
+   meta(charset='utf-8')
+   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+   style
+      |  ul.nav a {
+      |     text-transform: capitalize;
+      |  }
+
+body
+   .container
+      h1= page
+      hr
+      ul.nav.nav-pills
+         each link in links
+            li.nav-link: a(href=link)= link
+         li.nav-link: a(href='/new') new
+      hr
+      block content

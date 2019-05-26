@@ -1,0 +1,17 @@
+extends layout
+
+block content
+   form(method='post' action='/new')
+      fieldset
+         .form-group
+            lable(for='pageurl') Page Url
+            input#pageurl.form-control(name='pageurl' type='text')
+         .form-group
+            lable(for='pageurl') Page Name
+            input#pageurl.form-control(name='pagename' type='text')
+         .form-group
+            lable(for='pageurl') Page Content
+            input#pageurl.form-control(name='pagecontent' type='text')
+         .form-group
+            button.btn.btn-primary(type='submit') Add
+         
