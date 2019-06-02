@@ -60,7 +60,7 @@ yargs.command({
 // Create read command
 yargs.command({
    command: 'read',
-   describe: 'info has beed read',
+   describe: 'info has been read',
    builder: {                                   // Обязательные для указания свойства
       title: {
          describe: 'Note title',
